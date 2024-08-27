@@ -23,12 +23,12 @@ requirements:
   run:
     - python >=3.8
     - numpy
-    - pytorch >=2.1
+    - pytorch >=2.4,<2.5
     - safetensors
-    - pydantic >=2.0,<3.0
     - cached_path
     - requests
     - packaging
+    - omegaconf
 
 test:
   imports:
