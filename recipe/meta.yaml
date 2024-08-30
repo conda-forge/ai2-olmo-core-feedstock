@@ -27,8 +27,9 @@ requirements:
     - safetensors
     - cached_path
     - requests
-    - packaging
+    - rich
     - omegaconf
+    - importlib-resources
 
 test:
   imports:
