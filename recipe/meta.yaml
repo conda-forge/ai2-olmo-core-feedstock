@@ -1,5 +1,5 @@
 {% set name = "ai2-olmo-core" %}
-{% set version = "1.3.1" %}
+{% set version = "1.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ai2_olmo_core-{{ version }}.tar.gz
-  sha256: 99b2634fc08d757a766ee2968158018b91e432a32fd39bceab1bb111424e8e55
+  sha256: d05d804edb98268e31c462cd7f941f2cc9218cb5161323f646bea198732f1c5c
 
 build:
   noarch: python
