@@ -22,8 +22,8 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - numpy
-    - pytorch >=2.4,<2.5
+    - numpy <2
+    - pytorch >=2.4,<2.6
     - safetensors
     - cached_path
     - requests
