@@ -1,5 +1,5 @@
 {% set name = "ai2-olmo-core" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ai2_olmo_core-{{ version }}.tar.gz
-  sha256: 4cdbcfb9db89e9f57235a07b69a4025fb1bbd30139759be482b1637a2aa85cbd
+  sha256: 68c46c83222ddf5c0488899a4cce31f46d7b1a8416d6fb11362e409d75e61fe0
 
 build:
   noarch: python
@@ -30,6 +30,7 @@ requirements:
     - rich
     - omegaconf
     - importlib-resources
+    - ai2-olmo-eval 0.2.0
 
 test:
   imports:
