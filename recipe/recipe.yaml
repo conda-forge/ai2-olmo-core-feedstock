@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: ai2-olmo-core
+  version: "3.0.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/ai2_olmo_core-${{ version }}.tar.gz
+  sha256: 97c3be97a2d54eccf212ec99136b5eef163152e7f9d08bd9c39255bcbcf5e4cb
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - wheel
+    - pip
+  run:
+    - dataclass-extensions >=0.3.0
+    - filelock >=3.4,<4.0
+    - pandas
+    - pyyaml
+    - bettermap
+    - python >=${{ python_min }}
+    - numpy
+    - pytorch >=2.10.0,<2.14
+    - cached_path >=1.7.2
+    - requests
+    - packaging
+    - rich
+    - omegaconf
+    - safetensors
+    - importlib_resources
+    - ai2-olmo-eval ==0.7.1
+
+tests:
+  - python:
+      imports:
+        - olmo_core
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+
+about:
+  summary: Core training module for the Open Language Model (OLMo)
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/allenai/OLMo-core
+
+extra:
+  recipe-maintainers:
+    - xhochy
